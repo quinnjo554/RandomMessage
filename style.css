@@ -4,6 +4,29 @@ body{
          rgb(144, 194, 214) 5%, rgb(176, 216, 235) 50%) ;
 }
 
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+      
+  
+.header{
+    position: sticky;
+    height: 100px;
+    width: 100%;
+    background:linear-gradient(
+        to right,
+         rgb(225, 229, 231) 5%, rgb(216, 216, 216) 50%) ;
+}
+ 
+.header h1{
+    text-align: center;
+    position: fixed;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%);
+}
 
 section{
 display: flex;
@@ -11,9 +34,9 @@ position: absolute;
 top: 50%;
 left: 50%;
 transform: translate(-50%);
-border: 3px solid black;
+border-radius: 10px;
 box-shadow: 7px 5px 3px rgb(36, 35, 35);
-background-color: rgb(217, 219, 221);
+background-color: whitesmoke;
 padding: 10px;
 }
 
@@ -30,20 +53,22 @@ padding: 10px;
     top: 65%;
     left: 50%;
     transform: translate(-50%);
+    
 }
 
 .button button{
-
-    background-color:aquamarine;
+    box-shadow: none;
+    background-color:white;
     border-radius: 50px;
-    border-color: aquamarine;
+    border-color: white;
     height: 40px;
+    box-shadow: 2px 4px 0px;
+    
     
 }
 .button button:hover{
-
-    
-    border-color: white;
-    
-
+    border: 3px solid white;
+}
+.button button:active{
+    box-shadow: none; 
 }
