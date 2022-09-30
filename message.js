@@ -1,4 +1,5 @@
 
+//this function provides 
 function func(){
     const phrases = ["You can do it", "Dont give up!", "What would Tom Cruise Do?"];
     var randNum1 = Math.floor(Math.random() * phrases.length);
@@ -8,38 +9,50 @@ function func(){
 
     document.getElementById('message').innerHTML = completePhrase;
 }
+
+//footer of the page
 const tail = document.getElementById('tail');
+
+//makes the canvas and footer larger when clicked
 function size(){
     tail.style.zIndex = '1';
     tail.style.height = "790px";
 }
+
+//calls all methods for on click
 function onClick(){
     setup();
     update();
     size();
     tail.removeEventListener('click',onClick);
 }
+//makes the tail clickable
 tail.addEventListener('click', onClick);
 
+//resizes the window and makes the starfeild scalable 
 window.onresize = function(){
     setup();
 }
 
+//get canvas
 const canvas = document.getElementById('star');
+//set context
 const ctx = canvas.getContext('2d');
-
+//init screen and star arry vars
 var screen, starArr;
 
+//param obj
 var param = {
-    speed:10, 
-    count: 400, 
-    life:5};
+    speed:4, 
+    count: 600, 
+    life:5,
+};
 
-
-
-
+    //star class
     class Star {
+
     constructor() {
+        //sets the x,y,z var to a random location on screen
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.z = Math.random() * canvas.width;
@@ -47,7 +60,10 @@ var param = {
     }
 
     move = function () {
+        //moves the star forward 
         this.z -= param.speed;
+        
+        //keeps stars spawing far
         if (this.z <= 0) {
             this.z = canvas.width;
         }
@@ -57,15 +73,16 @@ var param = {
 
         let x, y, rad, opac;
 
+        //makes the stars get larger as they move closer
         rad = canvas.width / this.z;
 
         x = (this.x - screen.c[0]) * rad;
-        x = x + screen.c[0];
+        x += screen.c[0];
 
         y = (this.y - screen.c[1]) * rad;
-        y = y + screen.c[1];
+        y +=screen.c[1];
 
-        //opac = rad > param.life ? (2 - rad / param.life) * 1.5 : 1;
+        //make the stars disapear
         if(rad > param.life){
             opac = (2 - rad / param.life) * 1.5
         }
@@ -75,14 +92,13 @@ var param = {
 
 
         ctx.beginPath();
-        ctx.fillStyle = "rgba(255,255,255," + opac + ")";
-        ctx.arc(x, y, rad, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(50,255,55," + opac + ")";
+        ctx.arc(x, y, rad, 0, Math.PI*2);
         ctx.fill();
     };
 
 
 }
-
 
 function setup(){
     screen ={
@@ -113,3 +129,11 @@ function update(){
     })
 window.requestAnimationFrame(update);
 }
+
+
+
+
+
+
+
+
