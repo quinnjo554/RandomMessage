@@ -10,8 +10,11 @@ function func(){
     document.getElementById('message').innerHTML = completePhrase;
 }
 
+
+
 //footer of the page
 const tail = document.getElementById('tail');
+
 
 //makes the canvas and footer larger when clicked
 function size(){
@@ -36,6 +39,7 @@ window.onresize = function(){
 
 //get canvas
 const canvas = document.getElementById('star');
+
 //set context
 const ctx = canvas.getContext('2d');
 //init screen and star arry vars
@@ -43,10 +47,42 @@ var screen, starArr;
 
 //param obj
 var param = {
-    speed:4, 
-    count: 600, 
+    speed:2, 
+    count: 800, 
     life:5,
 };
+
+    class Bullet{
+        constructor(x,y){
+            this.x = x;
+            this.y = y;
+        }
+        bMove=function(){
+            this.y+=2;
+            if (this.y >= canvas.height) {
+                this.y = 0;
+            }
+        };
+
+    }
+
+
+    class Player{
+        
+        constructor(){
+            this.x = canvas.width/2;
+            this.y = 10;
+            this.bullet = new Bullet;
+
+        }
+
+        pShoot = function(){
+            this.bullet.move();
+        };
+
+
+    }
+
 
     //star class
     class Star {
@@ -59,7 +95,7 @@ var param = {
 
     }
 
-    move = function () {
+    move = function() {
         //moves the star forward 
         this.z -= param.speed;
         
@@ -84,15 +120,14 @@ var param = {
 
         //make the stars disapear
         if(rad > param.life){
-            opac = (2 - rad / param.life) * 1.5
+        opac = (2-rad/param.life) * 1.5
         }
         else{
-            opac=1;
+        opac=1;
         }
 
-
         ctx.beginPath();
-        ctx.fillStyle = "rgba(50,255,55," + opac + ")";
+        ctx.fillStyle = "rgb(255,255,255," + opac + ")";
         ctx.arc(x, y, rad, 0, Math.PI*2);
         ctx.fill();
     };
@@ -120,13 +155,13 @@ function setup(){
 }
 
 function update(){
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "black";    
     ctx.fillRect(0,0,canvas.width, canvas.height);
-
+    
     starArr.forEach(function(s){
         s.show();
         s.move();
-    })
+    });
 window.requestAnimationFrame(update);
 }
 
