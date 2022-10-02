@@ -13,24 +13,158 @@ function func(){
 
 
 //footer of the page
+const startPoint = document.getElementById("startBox");
+const header = document.querySelector('header');
 const tail = document.getElementById('tail');
+const ship = document.getElementById("ship"); //top - 90%
+const messageBox = document.querySelector("main");
+const shipBullet = document.getElementById("bullet");
+const badGuyLeft = document.getElementById("badGuy1");
+const badGuyRight = document.getElementById("badGuy2");
+const sprite2 = document.getElementById("sprite2");
+const explosion=document.getElementById("explosion");
+const explosion2=document.getElementById("explosion2");
+const gitLogo =document.querySelector('a');
+const gitHubimg = document.getElementsByClassName("gitHub");
+const linkdinLogo = document.getElementById("linkdin");
+let ani = ship.getAnimations();
 
+ function whenani1Finsished(){
+    ship.style.left = "48%";
+    shootLeft();
+    ship.style.left = "36%";
+}
+
+function updateSprite(){
+    if(badGuyLeft.style.visibility != "hidden" || badGuyRight.style.visibility != "hidden")
+    setInterval(function() {badGuyLeft.src = "./img/My project (2).png";}, 1000);
+    setInterval(function() {badGuyLeft.src = "./img/192-1926067_crab-invader-space-invaders-icon-white.png";}, 2000);
+    setInterval(function() {badGuyRight.src = "./img/My project (2).png";}, 1000);
+    setInterval(function() {badGuyRight.src = "./img/192-1926067_crab-invader-space-invaders-icon-white.png";}, 2000);
+}
+
+function spawnShip(){
+    ship.style.visibility = "visible";
+    ship.classList.add("spawnShip");
+    ani[0] = ship.getAnimations()[0];
+    ani[0].addEventListener("finish",whenani1Finsished);
+
+
+}
+
+function spawnEnimies(){
+    badGuyLeft.style.visibility = "visible";
+    badGuyRight.style.visibility = "visible";
+    badGuyLeft.classList.add("spawnBadGuy1");
+    badGuyRight.classList.add("spawnBadGuy2");
+}
+function endShooting(){
+    shipBullet.style.visibility = "hidden";
+}
+
+function breakEnimie1(){
+    //break enemy1
+    setTimeout(function(){
+        badGuyLeft.style.visibility = "hidden";
+        //add explosion
+        explosion.style.visibility = "visible";
+        setInterval(function() {explosion.src = "./img/Explosion2.png";}, 1000);
+        //add a github button
+        setInterval(function() {explosion.style.visibility = "hidden";gitLogo.style.visibility = "visible";}, 2000);
+    },7200);
+
+    //break ememy2
+    setTimeout(function(){
+        ship.classList.add("moveRight");
+        ship.style.left = "61%";
+    },7400);
+       
+}
+
+function breakEnemy2(){
+    setTimeout(function(){
+    explosion.style.left = "58%"; 
+    explosion.src =  "./img/Explosion.png"  
+    badGuyRight.style.visibility = "hidden";
+    //add explosion
+    explosion.style.visibility = "visible";
+    setInterval(function() {explosion.src = "./img/Explosion2.png";}, 1000);
+    //add a github button
+    setInterval(function() {explosion.style.visibility = "hidden";linkdinLogo.style.visibility = "visible";}, 1700);
+    },9400);
+}
+
+function fireRight(){
+    setTimeout(() =>{
+        shipBullet.style.left = "61%";
+        shipBullet.classList.add("fireRight");
+        shipBullet.style.visibility = "visible";
+        shipBullet.style.left = "-19%";
+    },9000);
+}
+
+function shootLeft(){
+    ship.classList.add("shootLeft");
+    ani[1]=ship.getAnimations()[1];
+}
+
+function fireLeft(){
+    setTimeout(() =>{
+    shipBullet.classList.add("fireLeft");
+    shipBullet.style.visibility = "visible";
+    shipBullet.style.left = "-19%"
+    },7000);
+}
+function final(){
+setTimeout(function(){
+    //move both elements 
+    gitLogo.classList.add("fancyMovegitHub");
+    gitLogo.style.top ="45%"; 
+    gitLogo.style.left= "38%";
+    linkdinLogo.classList.add("fancyMoveLinkdin");
+    linkdinLogo.style.top ="45%"; 
+    linkdinLogo.style.left= "57%";
+    //set ship away to the left off screen
+    ship.classList.add("shipOffScreen");
+    ship.style.left= "110%";
+    //add a contacts banner
+},11200);
+
+}
 
 //makes the canvas and footer larger when clicked
 function size(){
-    tail.style.zIndex = '1';
-    tail.style.height = "790px";
+    header.style.visibility = "hidden";
+    
+    document.body.style.backgroundColor = "black";
+    messageBox.style.visibility = 'hidden';
+    startPoint.style.zIndex = '1'; 
+    startPoint.style.left = "0"; 
+    startPoint.classList.add("animate");
+    ship.style.zIndex = '1';
+    badGuyRight.style.zIndex = '3';
+    badGuyLeft.style.zIndex = '3';
+    startPoint.style.top = "0px";
+    tail.style.zIndex = '-1';
+    spawnShip();
+    spawnEnimies();
+    fireLeft();
+    breakEnimie1();
+    fireRight();
+    breakEnemy2();
+    final();
 }
 
 //calls all methods for on click
 function onClick(){
     setup();
+    updateSprite();
     update();
     size();
     tail.removeEventListener('click',onClick);
 }
 //makes the tail clickable
-tail.addEventListener('click', onClick);
+startPoint.addEventListener('click', onClick);
 
 //resizes the window and makes the starfeild scalable 
 window.onresize = function(){
@@ -47,7 +181,7 @@ var screen, starArr;
 
 //param obj
 var param = {
-    speed:2, 
+    speed:3, 
     count: 800, 
     life:5,
 };
