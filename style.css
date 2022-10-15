@@ -1,17 +1,240 @@
 
-   
-
-body{
-  height: 1300px;
-}
-
-*{
+   *{
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
+}
+
+body{
+    display: grid;
+    position: fixed;
+    min-height: 100vh;
+    place-items:center;
+    line-height: 1.6;
+    background-color: rgb(42, 41, 41);
+    font-family: sans-serif;
+    right: 10%;
+    background-image: url(./img/5172658.jpg);
+    background-size:cover;
+   
+}
+
+.imges{
+    z-index: -1;
+    position: fixed;
+    padding-top: 0;
+    margin: 0%;
+   
+}
+
+.search-bar{
+    color: whitesmoke;
+    position: fixed;
+    visibility: visible;
+   overflow: hidden;
+   top: 40%;
+   left: 10%;
+}
+
+
+#search{
+    position: relative;
+    border-radius: 30px;
+    height: 45px;
+    width: 600px;
+    text-align: left;
+    padding-left: 25px;
+    font-size: 20px;
+    overflow: hidden;
+}
+input[type="text"]{
+    outline: none;
+}
+#text{
+    position:relative;
+    left: 30%;
     
 }
+
+.card{
+   
+    color: whitesmoke;
+    background-image: url(./img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+    background-size: cover;
+    padding:7rem 0 0;
+    max-width: 45ch;
+    min-width: 35ch;
+    border-radius: .5rem;
+    overflow:hidden;
+    transition-delay: 200ms;
+    transition:transform 500ms ease;
     
+    
+}
+
+.sorce{
+    position: fixed;
+    right: 10%;
+    bottom: 10%;
+    font-size: 10px;
+    color: white;
+}
+.card:hover{
+    transform: scale(1.10);
+}
+
+
+.card:hover .card-content{
+    transform: translateY(0);
+}
+
+.card-content{
+   position: relative;
+    --padding:1.5rem;
+    
+    padding: 1.5rem;
+    padding-bottom: 1.5rem;
+    background: linear-gradient(
+        hsl(0 0% 0%/0),
+        hsl(0 0% 0%/.4) 20%,
+        hsl(0 0% 0%/.2)
+    );
+    transform: translateY(70%);
+    transition:transform 500ms ease ;
+    transition-delay: 500ms;
+   
+}
+.card-body{
+    color: rgba(255, 255, 255, .82);
+}
+.title{
+    position: relative;
+    max-width: 100%;
+    width: max-content;
+    font-size: 27px;
+}
+
+.title::after{
+    content: "";
+    position: absolute;
+    height: 4px;
+    width: calc(100% + 1.5rem);
+    left: -1.5rem;
+    bottom: 0;
+    background: hsl(0, 0%, 96%);
+    transform:scaleX(0);
+    transform-origin: left;
+    transition:transform 500ms ease;
+}
+.card:hover .title::after{
+    transform:scaleX(1);
+}
+.button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color:  hsl(142, 90%, 61%);
+    padding: 0.5em 1.25em;
+    border-radius: 1rem;
+}
+.button:hover,
+.button:focus{
+    background-color: antiquewhite;
+    
+}
+
+@media (max-width:1320px){
+    body{
+        place-content: center;
+        place-items: center;
+        background-repeat:repeat;
+    }
+    .card{
+        /*delete with js*/
+        visibility: hidden;
+    }
+
+    .search-bar{
+   
+    color: whitesmoke;
+    position: fixed;
+    left: 25%;
+    margin-right:40%;
+    height: 105px;
+    width: 375px;
+    }
+    #search{
+       position: fixed; 
+       width: 375px; 
+    }
+    #text{
+        position: relative;  
+        left: 15%;
+    }
+};
+@media (max-width:744px){
+
+    .search-bar{
+   
+        color: whitesmoke;
+        position: fixed;
+        left: 15%;
+        margin-right:40%;
+        height: 105px;
+        width: 375px;
+    }
+
+}
+@media (max-width:525px){
+
+    .search-bar{
+   
+        color: whitesmoke;
+        position: fixed;
+        left: 4%;
+        margin-right:40%;
+        height: 105px;
+        width: 375px;
+    }
+
+}
+
+
+.moveimg{
+    animation: slideimgBox 500ms;
+}
+
+@keyframes slideimgBox{
+    0%{
+        position: relative;
+        left: 10px;;
+    }
+
+    100%{
+        right: 1000%;
+    }
+
+}
+
+@keyframes slideBar{
+
+    0%{
+        left: 10%;
+    }
+
+
+    100%{
+
+        left: 90%;
+
+    }
+
+}
+
+
+
+
 
 
 
@@ -24,11 +247,11 @@ body{
 
 footer{
 
-    position:fixed;
+    position:relative;
     width: 100%;
     height: 70px;
     background-color: whitesmoke;
-    bottom: 0;
+    bottom: 0%;
 
 }
 #foot{
@@ -114,11 +337,9 @@ footer{
      position: fixed;
  }
 #startBox{
-        width: 30px;
-        height: 75px;
+        width: 10px;
+        height: 15px;
         position: relative;
-        border: 2px solid black;
-        background-color: black;
 }
 #startBox p{
     color: antiquewhite;

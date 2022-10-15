@@ -14,17 +14,16 @@ function func(){
 
 //footer of the page
 const startPoint = document.getElementById("startBox");
+const body = document.querySelector('body');
 const header = document.querySelector('header');
-const tail = document.getElementById('tail');
 const ship = document.getElementById("ship"); //top - 90%
-const messageBox = document.querySelector("main");
 const shipBullet = document.getElementById("bullet");
 const badGuyLeft = document.getElementById("badGuy1");
 const badGuyRight = document.getElementById("badGuy2");
 const sprite2 = document.getElementById("sprite2");
 const explosion=document.getElementById("explosion");
 const explosion2=document.getElementById("explosion2");
-const gitLogo =document.querySelector('a');
+const gitLogo = document.getElementById('gitLogo');
 const gitHubimg = document.getElementsByClassName("gitHub");
 const linkdinLogo = document.getElementById("linkdin");
 let ani = ship.getAnimations();
@@ -134,10 +133,11 @@ setTimeout(function(){
 
 //makes the canvas and footer larger when clicked
 function size(){
+    canvas.style.zIndex = '12';
+    body.style.zIndex = '-1';
     startPoint.style.position = "fixed";
-    header.style.visibility = "hidden";
+    //header.style.visibility = "hidden";
     document.body.style.backgroundColor = "black";
-    messageBox.style.visibility = 'hidden';
     startPoint.style.zIndex = '1'; 
     startPoint.style.left = "0"; 
     startPoint.classList.add("animate");
@@ -145,7 +145,6 @@ function size(){
     badGuyRight.style.zIndex = '3';
     badGuyLeft.style.zIndex = '3';
     startPoint.style.top = "0px";
-    tail.style.zIndex = '-1';
     spawnShip();
     spawnEnimies();
     fireLeft();
