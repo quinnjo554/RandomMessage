@@ -2,11 +2,7 @@
    
 
 body{
-    background: linear-gradient(
-        to right,
-         rgb(144, 194, 214) 5%, rgb(176, 216, 235) 50%) ;
-    height: 800px;
-       
+  height: 1300px;
 }
 
 *{
@@ -16,79 +12,11 @@ body{
     
 }
     
-main{
-    padding-bottom: 70px;
-}
-  
-.header{
-    position: fixed;
-    height: 100px;
-    width: 100%;
-    z-index: 1;
-    background:linear-gradient(
-        to right,
-         rgb(225, 229, 231) 5%, rgb(216, 216, 216) 50%) ;
-}
- 
-.header h1{
-    text-align: center;
-    position: fixed;
-    top: 3%;
-    left: 50%;
-    transform: translate(-50%);
-}
-
-section{
-display: flex;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%);
-border-radius: 10px;
-box-shadow: 7px 5px 3px rgb(36, 35, 35);
-background-color: whitesmoke;
-padding: 10px;
-}
-
-.MessageBox{
-    
-    width: 300px;
-    height: 50px;
-    text-align: center;
-    
-}
-.message canvas{
-    
-    border: 1px solid black;
-}
-
-.button1{
-    display: flex;
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%);
-   
-    
-}
 
 
-.button1 button{
-    box-shadow: none;
-    background-color:white;
-    border-radius: 50px;
-    border-color: white;
-    height: 40px;
-    box-shadow: 2px 4px 0px;
-    
-    
-}
-.button1 button:hover{
-    border: 3px solid white;
-}
-.button1 button:active{
-    box-shadow: none; 
-}
+
+
+
 
 .animate{
     animation: move 1000ms;
@@ -186,12 +114,14 @@ footer{
      position: fixed;
  }
 #startBox{
-        width: 330px;
+        width: 30px;
         height: 75px;
-        position: fixed;
-        top: 50%;
-        
-        left:39%
+        position: relative;
+        border: 2px solid black;
+        background-color: black;
+}
+#startBox p{
+    color: antiquewhite;
 }
 #sprite2{
     visibility: hidden;

@@ -134,8 +134,8 @@ setTimeout(function(){
 
 //makes the canvas and footer larger when clicked
 function size(){
+    startPoint.style.position = "fixed";
     header.style.visibility = "hidden";
-    
     document.body.style.backgroundColor = "black";
     messageBox.style.visibility = 'hidden';
     startPoint.style.zIndex = '1'; 
@@ -161,7 +161,7 @@ function onClick(){
     updateSprite();
     update();
     size();
-    tail.removeEventListener('click',onClick);
+    startPoint.removeEventListener('click',onClick);
 }
 //makes the tail clickable
 startPoint.addEventListener('click', onClick);
@@ -181,41 +181,13 @@ var screen, starArr;
 
 //param obj
 var param = {
-    speed:3, 
+    speed:9, 
     count: 800, 
     life:5,
 };
 
-    class Bullet{
-        constructor(x,y){
-            this.x = x;
-            this.y = y;
-        }
-        bMove=function(){
-            this.y+=2;
-            if (this.y >= canvas.height) {
-                this.y = 0;
-            }
-        };
+   
 
-    }
-
-
-    class Player{
-        
-        constructor(){
-            this.x = canvas.width/2;
-            this.y = 10;
-            this.bullet = new Bullet;
-
-        }
-
-        pShoot = function(){
-            this.bullet.move();
-        };
-
-
-    }
 
 
     //star class
