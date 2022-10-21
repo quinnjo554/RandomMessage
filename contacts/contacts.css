@@ -1,0 +1,317 @@
+#startBox{
+    width: 10px;
+    height: 15px;
+    position: fixed;
+    left: 0;
+    border:2px solid black;
+}
+
+
+.animate{
+    animation: move 1000ms;
+}
+
+footer{
+
+    position:relative;
+    width: 100%;
+    height: 70px;
+    background-color: whitesmoke;
+    bottom: 0%;
+
+}
+#foot{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    z-index: 2;
+}
+
+
+#linkdin img{
+    border-radius: 40px;
+    box-shadow:2px 2px 4px white;
+}
+#linkdin :hover{
+    box-shadow:none;
+}
+#linkdin{
+    visibility: hidden;
+    position: fixed;
+    top: 34%;
+    left: 60%;
+    z-index: 3
+}
+.gitHub a{
+    visibility: hidden;
+    top: 35%;
+    left: 35%;
+    z-index: 3;
+    position: fixed;  
+    border-radius: 50px;
+    box-shadow:2px 2px 4px white;
+}
+.gitHub a:hover{
+    box-shadow: none;
+}
+
+#ship{
+    
+    visibility:hidden;
+    position: fixed;
+    top: 80%;
+    left: -55%;
+
+}
+#bullet{
+    position: fixed;
+    visibility: hidden;
+    z-index: 2;
+    top: 74.2%;
+    left: 47.9%;
+    transform: rotate(270deg);
+}
+.badGuys #explosion{
+    visibility: hidden;
+    top: 32%;
+    left: 33.3%;
+    z-index: 3;
+    position: fixed;
+}
+.badGuys #explosion2{
+    visibility: hidden;
+    top: 34%;
+    left: 34%;
+    z-index: 3;
+    position: fixed;
+}
+.badGuys #badGuy1{
+    
+   visibility: hidden;
+    top: 34%;
+    left: 34%;
+    z-index: 3;
+    position: fixed;
+}
+
+.badGuys #badGuy2{
+    
+    visibility: hidden;
+     top: 34%;
+     left: 59%;
+     z-index: 3;
+     position: fixed;
+ }
+#startBox{
+        width: 10px;
+        height: 15px;
+        position: fixed;
+        left: 0;
+}
+
+#startBox p{
+    color: antiquewhite;
+}
+#sprite2{
+    visibility: hidden;
+}
+
+.spawnShip{
+    animation: spawnShip 5000ms;
+}
+
+.spawnBadGuy1{
+    animation: spawnBadGuy1 5000ms;
+}
+.spawnBadGuy2{
+    animation: spawnBadGuy2 5000ms;
+}
+
+.shootLeft{
+    animation: shootLeft 2000ms;
+}
+
+.moveRight{
+    animation: moveRight 2000ms;
+}
+
+.fireLeft{
+    animation: fireLeft 200ms;
+}
+.fireRight{
+    animation: fireRight 200ms;
+}
+
+.fancyMovegitHub{
+    animation: gitHubMove 500ms;
+}
+
+.fancyMoveLinkdin{
+    animation: LinkdinMove 500ms;
+}
+.shipOffScreen{
+    animation: shipOffScreen 2000ms;
+}
+
+@keyframes move{
+    0%{
+        height: 0px;
+        width: 0px;
+        top: 50%;
+        left:39%
+        
+    }
+50%{
+   
+}
+    100%{
+        width: 100%;
+        height: 10px;
+    }
+}
+@keyframes shipOffScreen {
+    0%{
+    left: 61%;
+    transform: rotate(90deg);
+    }
+    100%{
+        left: 110%;
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes spawnShip{
+    0%{
+       transform: rotate(90deg);
+       left: -10;
+    }
+
+    30%{
+        left: 48%;
+        transform:rotate(90deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+        left: 48%;
+    }
+}
+
+@keyframes spawnBadGuy1{
+
+    0%{
+        top: -10%;
+       
+     }
+ 
+     30%{
+         left: 35%;
+         
+     }
+ 
+     100%{
+         
+         left: 34%;
+         transform: rotate(0deg);
+     }
+
+
+    }
+
+    @keyframes spawnBadGuy2{
+
+        0%{
+            top: -10%;
+            
+         }
+     
+         30%{
+             left: 59%;
+             
+         }
+     
+         100%{
+             
+             left: 59%;
+             transform: rotate(0deg);
+         }
+    
+    }
+
+    @keyframes shootLeft{
+
+        0%{
+            left: 48%;
+            transform: rotate(-90deg);
+         }
+     
+         
+         100%{
+             
+             left: 36%;
+             transform: rotate(0deg);
+         }
+    
+    }
+@keyframes moveRight{
+    0%{
+        left: 36%;
+        transform: rotate(90deg);
+     }
+ 
+     100%{ 
+         left: 61%;
+         transform: rotate(0deg);
+     }
+}
+
+    @keyframes fireLeft{
+
+        0%{
+            left: 36%;
+            
+         }
+         100%{
+             
+             top: 48%;
+             left: 36%;
+             
+         }
+    
+    }
+    @keyframes fireRight{
+
+        0%{
+            left: 61%;
+            
+         }
+         100%{
+             
+             top: 48%;
+             left: 61%;
+             
+         }
+    
+    }
+    @keyframes gitHubMove{
+        0%{
+            top: 35%;
+            left: 35%;
+         }
+         100%{    
+             top: 45%; 
+             left: 38%; 
+         }
+    
+    }
+    @keyframes LinkdinMove{
+        0%{
+            top: 34%;
+            left: 60%;
+         }
+         100%{    
+             top: 45%; 
+             left: 57%; 
+         }
+    
+    }

@@ -15,7 +15,6 @@ var isClosed = false;
 //footer of the page
 const startPoint = document.getElementById("startBox");
 const body = document.querySelector('body');
-const closeButton = document.getElementById("closeButton");
 const ship = document.getElementById("ship"); //top - 90%
 const shipBullet = document.getElementById("bullet");
 const badGuyLeft = document.getElementById("badGuy1");
@@ -133,20 +132,12 @@ setTimeout(function(){
 
 }
 
-function createClose(){
-    closeButton.style.visibility = 'visible';
-    closeButton.addEventListener("click", function(){
-        //set interval to after the ani is done
-     canvas.width =0;
-     image.style.visibility = 'hidden';
-    });
 
-}
 
 
 //makes the canvas and footer larger when clicked
 function size(){
-    createClose();
+   
     canvas.style.zIndex = '12';
     body.style.zIndex = '-1';
     startPoint.style.position = "fixed";
@@ -169,18 +160,11 @@ function size(){
 }
 
 //calls all methods for on click
-function onClick(){
-    setup();
-    canvas.width = window.innerWidth;
-    canvas.width = window.innerWidth;
-    updateSprite();
-    update();
-    size();
-    startPoint.removeEventListener('click',onClick);
-}
+
+
 
 //makes the tail clickable
-startPoint.addEventListener('click', onClick);
+
 
 //resizes the window and makes the starfeild scalable 
 window.onresize = function(){
@@ -286,7 +270,12 @@ function update(){
 window.requestAnimationFrame(update);
 }
 
-
+setup();
+canvas.width = window.innerWidth;
+canvas.width = window.innerWidth;
+updateSprite();
+update();
+size();
 
 
 
