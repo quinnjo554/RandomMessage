@@ -11,11 +11,11 @@ function func(){
 }
 
 
-
+var isClosed = false;
 //footer of the page
 const startPoint = document.getElementById("startBox");
 const body = document.querySelector('body');
-const header = document.querySelector('header');
+const closeButton = document.getElementById("closeButton");
 const ship = document.getElementById("ship"); //top - 90%
 const shipBullet = document.getElementById("bullet");
 const badGuyLeft = document.getElementById("badGuy1");
@@ -26,6 +26,7 @@ const explosion2=document.getElementById("explosion2");
 const gitLogo = document.getElementById('gitLogo');
 const gitHubimg = document.getElementsByClassName("gitHub");
 const linkdinLogo = document.getElementById("linkdin");
+const image = document.querySelector('img');
 let ani = ship.getAnimations();
 
  function whenani1Finsished(){
@@ -114,6 +115,7 @@ function fireLeft(){
     shipBullet.style.left = "-19%"
     },7000);
 }
+
 function final(){
 setTimeout(function(){
     //move both elements 
@@ -131,8 +133,20 @@ setTimeout(function(){
 
 }
 
+function createClose(){
+    closeButton.style.visibility = 'visible';
+    closeButton.addEventListener("click", function(){
+        //set interval to after the ani is done
+     canvas.width =0;
+     image.style.visibility = 'hidden';
+    });
+
+}
+
+
 //makes the canvas and footer larger when clicked
 function size(){
+    createClose();
     canvas.style.zIndex = '12';
     body.style.zIndex = '-1';
     startPoint.style.position = "fixed";
@@ -157,11 +171,14 @@ function size(){
 //calls all methods for on click
 function onClick(){
     setup();
+    canvas.width = window.innerWidth;
+    canvas.width = window.innerWidth;
     updateSprite();
     update();
     size();
     startPoint.removeEventListener('click',onClick);
 }
+
 //makes the tail clickable
 startPoint.addEventListener('click', onClick);
 
@@ -169,7 +186,6 @@ startPoint.addEventListener('click', onClick);
 window.onresize = function(){
     setup();
 }
-
 //get canvas
 const canvas = document.getElementById('star');
 

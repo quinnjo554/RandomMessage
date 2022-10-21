@@ -56,6 +56,25 @@ input[type="text"]{
     
 }
 
+#canvas{
+    height: 100vh;
+}
+
+
+#card2{
+    position: fixed;
+    left: 10%;
+    top: 20%;
+    color: whitesmoke;
+    background-image: url(./img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+    height: 570px;
+    padding:0rem 0 0;
+}
+
+#closeButton{
+    z-index: 12;
+}
+
 .card{
    
     color: whitesmoke;
@@ -339,8 +358,10 @@ footer{
 #startBox{
         width: 10px;
         height: 15px;
-        position: relative;
+        position: fixed;
+        left: 0;
 }
+
 #startBox p{
     color: antiquewhite;
 }
