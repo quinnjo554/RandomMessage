@@ -141,7 +141,7 @@ function size(){
     canvas.style.zIndex = '12';
     body.style.zIndex = '-1';
     startPoint.style.position = "fixed";
-    //header.style.visibility = "hidden";
+
     document.body.style.backgroundColor = "black";
     startPoint.style.zIndex = '1'; 
     startPoint.style.left = "0"; 
