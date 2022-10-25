@@ -21,8 +21,8 @@ body{
 
 #card2{
     position: fixed;
-    left: 10%;
-    top: 20%;
+    left: 13%;
+    top: 14%;
     color: whitesmoke;
     background-image: url(./img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
     height: 570px;
@@ -34,13 +34,14 @@ body{
     color: whitesmoke;
     background-image: url(./img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
     background-size: cover;
-    padding:7rem 0 0;
+    padding:1rem 0 0;
     max-width: 45ch;
     min-width: 35ch;
     border-radius: .5rem;
     overflow:hidden;
     transition-delay: 200ms;
     transition:transform 500ms ease;
+    margin-top: 25px;
     
 }
 
@@ -106,6 +107,11 @@ body{
     background-color:  hsl(142, 90%, 61%);
     padding: 0.5em 1.25em;
     border-radius: 1rem;
+    
+}
+
+#about{
+    margin-left: 10px
 }
 .quinn-img{
     margin: 0;
@@ -158,9 +164,11 @@ body{
 
 .contact-tab{
     position: relative;
-    top: 23%;
-    left: 29%;
+    top: 26%;
+    left: 31%;
     padding: 0em;
+   
+    
 }
 
 

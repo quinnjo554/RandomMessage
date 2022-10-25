@@ -23,3 +23,7 @@ quinn.addEventListener('click',(e)=>{
   newDiv.className = "ghost";
 
 });
+
+//add transition from one page load to the next;
+//do the colapse to the middle then revels from the middle
+//like turning off an old tv    

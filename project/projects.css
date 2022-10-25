@@ -9,7 +9,8 @@ body{
 .ProjCard{
     position: relative;
     border: 1px solid black;
-    width: max-content;
+    width: 300px;
+    
     padding: 40px;
 
 }
