@@ -1,0 +1,15 @@
+body{
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    display: grid;
+}
+
+
+.ProjCard{
+    position: relative;
+    border: 1px solid black;
+    width: max-content;
+    padding: 40px;
+
+}
