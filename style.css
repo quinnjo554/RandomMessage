@@ -16,7 +16,7 @@ body{
     background-color: rgb(42, 41, 41);
     font-family: sans-serif;
     right: 10%;
-    background-image: url(./img/5172658.jpg);
+    background-image: url(/img/5172658.jpg);
     background-size:cover;
     animation: onLoad 1000ms ease;
     
@@ -27,7 +27,7 @@ body{
     left: 13%;
     top: 14%;
     color: whitesmoke;
-    background-image: url(./img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+    background-image: url(/img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
     height: 570px;
     padding:1rem 5rem;
 }
@@ -35,7 +35,7 @@ body{
 .card{
    
     color: whitesmoke;
-    background-image: url(./img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+    background-image: url(/img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
     background-size: cover;
     padding:1rem 0 0;
     max-width: 45ch;

@@ -16,7 +16,7 @@ body {
     height: 290px;
     left: 10%;
     border-radius: 2rem;
-    background-image:url(/index/img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+    background-image:url(/img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
     background-size: cover;
     transition:transform 500ms ease;
 }
