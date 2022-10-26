@@ -3,6 +3,8 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box; 
+    
+    
 }
 
 body{
@@ -16,7 +18,8 @@ body{
     right: 10%;
     background-image: url(./img/5172658.jpg);
     background-size:cover;
-   
+    animation: onLoad 1000ms ease;
+    
 }
 
 #card2{
@@ -177,102 +180,22 @@ body{
     background-color: antiquewhite;
     
 }
-.ghost{
 
-    position: fixed;
-    height: 100px;
-    width: 100px;
-    left:50%;
-    top:5%;
-
-}
-
-@media (max-width:1320px){
-    body{
-        place-content: center;
-        place-items: center;
-        background-repeat:repeat;
-    }
-    .card{
-        /*delete with js*/
-        visibility: hidden;
-    }
-
-    .search-bar{
+@keyframes onLoad{
    
-    color: whitesmoke;
-    position: fixed;
-    left: 25%;
-    margin-right:40%;
-    height: 105px;
-    width: 375px;
-    }
-    #search{
-       position: fixed; 
-       width: 375px; 
-    }
-    #text{
-        position: relative;  
-        left: 15%;
-    }
-};
-@media (max-width:744px){
-
-    .search-bar{
-   
-        color: whitesmoke;
-        position: fixed;
-        left: 15%;
-        margin-right:40%;
-        height: 105px;
-        width: 375px;
-    }
-
-}
-@media (max-width:525px){
-
-    .search-bar{
-   
-        color: whitesmoke;
-        position: fixed;
-        left: 4%;
-        margin-right:40%;
-        height: 105px;
-        width: 375px;
-    }
-
-}
-
-
-.moveimg{
-    animation: slideimgBox 500ms;
-}
-
-@keyframes slideimgBox{
     0%{
-        position: relative;
-        left: 10px;;
+        opacity: 0;
     }
 
     100%{
-        right: 1000%;
-    }
-
+        opacity: 1;
+        }
 }
 
-@keyframes slideBar{
-
-    0%{
-        left: 10%;
-    }
 
 
-    100%{
 
-        left: 90%;
 
-    }
 
-}
 
 

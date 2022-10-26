@@ -3,16 +3,47 @@ body {
     margin: 0;
     padding: 0;
     display: grid;
+    font-family: sans-serif;
+    background-image:url(/3d-abstract-wave-pattern-background.jpg);
+    background-size: cover;
 }
 
 
 .ProjCard {
-    position: relative;
-    border: 1px solid black;
+    position: fixed;
+    color: whitesmoke;
     width: 350px;
-    height: 250px;
+    height: 290px;
     left: 10%;
+    border-radius: 2rem;
+    background-image:url(/index/img/vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+    background-size: cover;
+    transition:transform 500ms ease;
 }
+
+
+.ProjCard:hover{
+
+    transform: scale(1.10);
+
+}
+
+#card1{
+    
+    left:60%;
+    top: 10%;
+    
+}
+
+#card2{
+    position: fixed;
+    top: 10%;   
+}
+#card3{
+    position: fixed;
+    bottom: 10%;   
+}
+
 
 .card-content {
 
@@ -20,7 +51,8 @@ body {
     position: relative;
     padding-right: 1.5rem;
     padding-bottom: 1rem;
-
+    padding-top: 1rem;
+   
 }
 
 .title {
@@ -28,8 +60,9 @@ body {
     max-width: 100%;
     width: max-content;
     font-size: 27px;
-    left: 30%;
-    border: 1px solid black;
+    margin-left: 5rem;
+    
+    
 }
 
 
@@ -45,4 +78,5 @@ body {
     top: 100%;
     color: aquamarine;
     padding-left: 1rem;
+    left: 30%;
 }
