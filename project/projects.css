@@ -1,4 +1,4 @@
-body{
+body {
     background-color: white;
     margin: 0;
     padding: 0;
@@ -6,11 +6,43 @@ body{
 }
 
 
-.ProjCard{
+.ProjCard {
     position: relative;
     border: 1px solid black;
-    width: 300px;
-    
-    padding: 40px;
+    width: 350px;
+    height: 250px;
+    left: 10%;
+}
 
+.card-content {
+
+    display: inline-block;
+    position: relative;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+
+}
+
+.title {
+    position: relative;
+    max-width: 100%;
+    width: max-content;
+    font-size: 27px;
+    left: 30%;
+    border: 1px solid black;
+}
+
+
+.card-body {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 1rem;
+
+}
+
+.button {
+    position: relative;
+    top: 100%;
+    color: aquamarine;
+    padding-left: 1rem;
 }
