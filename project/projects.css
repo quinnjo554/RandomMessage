@@ -11,7 +11,7 @@ body {
 
 .ProjCard {
     position: fixed;
-    color: whitesmoke;
+    color: rgb(253, 253, 253);
     width: 350px;
     height: 290px;
     left: 10%;
@@ -21,6 +21,21 @@ body {
     transition:transform 500ms ease;
 }
 
+.title{
+    width: max-content;
+    background-color: black;
+    
+}
+
+.button{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color:  hsl(142, 90%, 61%);
+    padding: 0.4em 1.25em;
+    border-radius: 1rem;
+}
 
 .ProjCard:hover{
 
@@ -43,7 +58,18 @@ body {
     position: fixed;
     bottom: 10%;   
 }
-
+#card4{
+    position: fixed;
+    bottom: 10%;  
+    left: 60%; 
+}
+#home{
+    display: flex;
+    width: 50px;
+    left:2%;
+    top: 0%;
+    justify-content: center;
+}
 
 .card-content {
 
@@ -54,6 +80,7 @@ body {
     padding-top: 1rem;
    
 }
+
 
 .title {
     position: relative;
@@ -76,7 +103,17 @@ body {
 .button {
     position: relative;
     top: 100%;
-    color: aquamarine;
-    padding-left: 1rem;
-    left: 30%;
+    padding-left: 1.5rem;
+    left: 40%;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    background-color:  hsl(142, 90%, 61%);
+    padding: 0.4em 1.25em;
+    border-radius: 1rem;
+}
+
+.button:hover {
+    background-color:  whitesmoke;
 }

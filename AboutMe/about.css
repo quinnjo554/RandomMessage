@@ -1,0 +1,184 @@
+*{ 
+        box-sizing: border-box;  
+        font-family: sans-serif;
+        
+}
+body{
+    background-image: url(./5172658.jpg);
+}
+
+.Main-Para{
+    
+    position: relative;
+    left: 29%;
+    width: 500px;
+    height: 260px;
+    border: 1px solid black;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin: 1rem;
+    background-image: url(./vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+    color: rgb(255, 255, 255);
+}
+
+.Skills{
+    margin: 1rem;
+    position: fixed;
+    left: 29%;
+    top: 36%;
+    width: 500px;
+    padding: 2rem;
+    border-radius: 1rem;
+    visibility: hidden;
+    color: rgb(255, 250, 250);
+    background-image: url(./vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+    justify-content:center;
+    
+}
+
+.ThankYouCard{
+    margin: 1rem;
+    position: fixed;
+    left: 29%;
+    top: 36%;
+    width: 500px;
+    padding: 2rem;
+    height: 260px;
+    border-radius: 1rem;
+    z-index: -1;
+    visibility: hidden;
+    color: rgb(255, 250, 250);
+    background-image: url(./vecteezy_abstract-blue-background-simple-design-for-your-website_6852804.jpg);
+}
+.homelink{
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color:  hsl(142, 90%, 61%);
+    padding: 0.4em 1.25em;
+    border-radius: 1rem;
+    border-color: hsl(142, 90%, 61%);
+
+}
+
+#list{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    list-style: none;
+    left: 15%;
+    
+}
+
+li{
+    margin-right: .5rem;
+    margin-bottom: .5rem;
+}
+
+
+#endButton{
+    position: relative;
+    left:40%;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color:  hsl(142, 90%, 61%);
+    padding: 0.4em 1.25em;
+    border-radius: 1rem;
+    border-color: hsl(142, 90%, 61%);
+    visibility: hidden;
+}
+
+#skills-button{
+
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: black;
+    background-color:  hsl(142, 90%, 61%);
+    padding: 0.4em 1.25em;
+    border-radius: 1rem;
+    border-color: hsl(142, 90%, 61%);
+
+}
+
+#skills-button:hover{
+    background-color: whitesmoke;
+    border-color:whitesmoke;
+}
+
+.loadContent{
+    animation: loadSkillsText 4s ease;
+}
+
+.LoadSkill{
+    animation: loadSkills 4s ease;
+}
+
+.loadEnd{
+    animation: loadThankyou 4s ease;
+}
+
+.flipback{
+    animation: FlipBack 4s ease;
+}
+
+@keyframes loadSkills{
+
+0%{   
+    position: fixed;
+    top: 0%;
+    transform:translateX(-150%);
+    transform: scaleY(-100%); 
+}
+100%{ 
+   
+    position: fixed;
+    left: 29%;
+    top: 36%;
+    
+}
+}
+
+@keyframes loadSkillsText{
+    0%{
+        opacity: 0;
+    }
+    20%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes loadThankyou{
+    0%{   
+        position: fixed;
+        top: 36%;
+        transform: scaleX(-100%);  
+    }
+    100%{ 
+       
+        position: fixed;
+        left: -7%;
+        top: 36%;    
+    }
+}
+
+@keyframes FlipBack{
+    0%{   
+        position: fixed;
+        left: -7%;
+        top: 36%;
+        transform: scaleX(-100%);  
+    }
+    100%{  
+        position: fixed;
+        left: 29%;
+        top: 36%;    
+    }
+}
